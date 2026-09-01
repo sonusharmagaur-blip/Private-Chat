@@ -1,0 +1,10 @@
+{
+  "name":"Private Two Person Chat",
+  "short_name":"Private Chat",
+  "description":"A private two-person chat with PIN lock and short message retention.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#0b141a",
+  "theme_color":"#0b846d"
+}
