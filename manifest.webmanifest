@@ -1,10 +1,2 @@
-{
-  "name":"Private Two Person Chat",
-  "short_name":"Private Chat",
-  "description":"A private two-person chat with PIN lock and short message retention.",
-  "start_url":"./",
-  "scope":"./",
-  "display":"standalone",
-  "background_color":"#0b141a",
-  "theme_color":"#0b846d"
-}
+{"name":"Railway HRMS Internal Messaging","short_name":"Railway HRMS","description":"Unofficial two-person internal messaging app with login lock and short retention.","start_url":"./","scope":"./","display":"standalone","background_color":"#f1f5f9","theme_color":"#123b68"}
+
