@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+  <meta name="theme-color" content="#0b141a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Private Chat">
+  <title>Private Chat</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell" aria-live="polite">
+    <section id="setupScreen" class="screen auth-screen hidden">
+      <div class="auth-card">
+        <div class="brand-mark">PC</div>
+        <p class="eyebrow">PRIVATE • TWO PERSON CHAT</p>
+        <h1>Device setup</h1>
+        <p class="muted">Is phone par kaun chat karega aur unlock PIN set karein.</p>
+        <label>Is device ka person</label>
+        <div class="role-grid">
+          <button class="role-btn selected" data-role="a">Person 1</button>
+          <button class="role-btn" data-role="b">Person 2</button>
+        </div>
+        <label for="newPin">4–8 digit PIN</label>
+        <input id="newPin" class="pin-input" type="password" inputmode="numeric" maxlength="8" autocomplete="new-password" placeholder="••••">
+        <label for="roomCode">Private room code</label>
+        <input id="roomCode" type="text" maxlength="24" autocomplete="off" placeholder="Dono phones par same code">
+        <button id="saveSetup" class="primary-btn">Save & open chat</button>
+        <p id="setupError" class="error-text"></p>
+      </div>
+    </section>
+
+    <section id="lockScreen" class="screen auth-screen hidden">
+      <div class="auth-card compact">
+        <div class="lock-icon">⌁</div>
+        <p class="eyebrow">PRIVATE CHAT LOCKED</p>
+        <h1>Welcome back</h1>
+        <p class="muted">Har baar PIN daal kar hi chat khulegi.</p>
+        <input id="unlockPin" class="pin-input" type="password" inputmode="numeric" maxlength="8" autocomplete="current-password" placeholder="Enter PIN">
+        <button id="unlockBtn" class="primary-btn">Unlock</button>
+        <button id="resetBtn" class="text-btn">Reset this device</button>
+        <p id="unlockError" class="error-text"></p>
+      </div>
+    </section>
+
+    <section id="chatScreen" class="screen chat-screen hidden">
+      <header class="chat-header">
+        <div class="avatar">2</div>
+        <div class="contact-copy">
+          <strong>Private Chat</strong>
+          <span id="statusLine"><i class="status-dot"></i> secure room</span>
+        </div>
+        <button id="lockBtn" class="icon-btn" aria-label="Lock app">⌁</button>
+      </header>
+
+      <main id="messageList" class="messages" aria-label="Messages"></main>
+
+      <footer class="composer-wrap">
+        <form id="messageForm" class="composer">
+          <textarea id="messageInput" rows="1" maxlength="500" placeholder="Message" aria-label="Message"></textarea>
+          <button id="sendBtn" type="submit" class="send-btn" aria-label="Send message">➤</button>
+        </form>
+        <p class="retention-note">Sirf har person ke latest 3 messages rakhe jaate hain</p>
+      </footer>
+    </section>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
